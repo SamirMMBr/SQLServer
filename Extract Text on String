@@ -20,9 +20,8 @@ SELECT campo_texto
 	 , Setor_PosFinal = CHARINDEX(' ', SUBSTRING(campo_texto, LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7)), LEN(campo_texto) - CHARINDEX(' setor ', campo_texto)))
 
 	 , Setor_Indefinido = SUBSTRING(campo_texto
-	                              , LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7))
-								  , CHARINDEX(' ', SUBSTRING(campo_texto, LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7)), LEN(campo_texto) - CHARINDEX(' setor ', campo_texto))))
-	 
+	 , LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7))
+	 , CHARINDEX(' ', SUBSTRING(campo_texto, LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7)), LEN(campo_texto) - CHARINDEX(' setor ', campo_texto))))
 	 
 	 , Subsetor_PosInicial = LEN(campo_texto) - CHARINDEX(' ', REVERSE(campo_texto)) + 2
 	 , Subsetor_PosFinal = CHARINDEX(' ', REVERSE(campo_texto))-1
