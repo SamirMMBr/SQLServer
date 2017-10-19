@@ -1,0 +1,35 @@
+
+CREATE TABLE #table( campo_texto nvarchar(200))
+GO
+
+INSERT INTO #table ( campo_texto )
+VALUES ('bla bla bla setor SEMSU ka aka aka aka subsetor CM')
+, ('bla bla bla setor SEMSU ka aka aka aka subsetor CM')
+, ('bla bla bla setor SEMSU ka aka aka aka subsetor CM')
+, ('bla bla bla setor SEMSU ka aka aka aka subsetor SEMSU')
+, ('bla bla bla setor SEMSU ka aka aka aka subsetor COPOM')
+, ('bla bla bla setor SEMSU ka aka aka aka subsetor NaoSeiTamanhoDoSubSetor')
+, ('outro texto antes do campo setor SEMSUaaa ka aka aka aka subsetor NaoSeiTamanhoDoSubSetor')
+, ('outro texto antes do campo setor SEMSUaaabbbbb ka aka aka aka subsetor NaoSeiTamanhoDoSubSetor')
+, ('outro texto antes do campo setor SEMSUaaabbbbbcccc ka aka aka aka subsetor NaoSeiTamanhoDoSubSetor')
+GO
+
+SELECT campo_texto
+     
+	 , Setor_PosInicial = LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7))
+	 , Setor_PosFinal = CHARINDEX(' ', SUBSTRING(campo_texto, LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7)), LEN(campo_texto) - CHARINDEX(' setor ', campo_texto)))
+
+	 , Setor_Indefinido = SUBSTRING(campo_texto
+	                              , LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7))
+								  , CHARINDEX(' ', SUBSTRING(campo_texto, LEN(SUBSTRING(campo_texto, 1, CHARINDEX(' setor ', campo_texto) + 7)), LEN(campo_texto) - CHARINDEX(' setor ', campo_texto))))
+	 
+	 
+	 , Subsetor_PosInicial = LEN(campo_texto) - CHARINDEX(' ', REVERSE(campo_texto)) + 2
+	 , Subsetor_PosFinal = CHARINDEX(' ', REVERSE(campo_texto))-1
+
+	 , Subsetor = SUBSTRING(campo_texto, LEN(campo_texto) - CHARINDEX(' ', REVERSE(campo_texto)) + 2, CHARINDEX(' ', REVERSE(campo_texto))-1)
+FROM #table
+GO
+
+DROP TABLE #table
+GO
