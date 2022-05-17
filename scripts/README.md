@@ -6,3 +6,5 @@ Exemplos de script T-SQL
 * sqlserver-tsql-query-with-as-while-not-recursive; Usar WITH AS, tabela temporária e WHILE sem recursivade para criar Tabela de Calendário
 
 * sqlserver-tsql-query-with-as-recursive; Usar WITH AS com recursividade para criar Tabela de Calendário
+
+* sqlserver-tsql-query-First-End-DateOfMonth-YearBissexto; Encontrar Primeiro e Último dia do Mês - Validar se Ano é Bissexto
