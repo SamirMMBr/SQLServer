@@ -8,3 +8,6 @@ Exemplos de script T-SQL
 * sqlserver-tsql-query-with-as-recursive; Usar WITH AS com recursividade para criar Tabela de Calendário
 
 * sqlserver-tsql-query-First-End-DateOfMonth-YearBissexto; Encontrar Primeiro e Último dia do Mês - Validar se Ano é Bissexto
+
+* sqlserver-tsql-query-DateTime-Format-Parts; Exemplo de SELECT formatando Data e Hora: Ano, Mês, Abreviddo, Culture ( Idioma ), Bissexto
+
