@@ -11,3 +11,4 @@ Exemplos de script T-SQL
 
 * sqlserver-tsql-query-DateTime-Format-Parts; Exemplo de SELECT formatando Data e Hora: Ano, Mês, Abreviddo, Culture ( Idioma ), Bissexto
 
+* sqlserver-tsql-query-format-decimalnumber-currency-culture; Exemplo de Formatação de Decimal em Moeda com Culture ( Idioma )
