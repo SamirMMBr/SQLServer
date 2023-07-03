@@ -49,8 +49,14 @@ SELECT
   Vr_Nota AS Vr_Nota,
 
   -- Valor Formatado como MOEDA (ENU)
-  FORMAT(Vr_Nota, 'C') AS Vr_NotaENU,
+  FORMAT(Vr_Nota, 'C') AS Vr_NotaENU_Moeda,
 
   -- Valor Formatado como MOEDA (PT-BR)
-  FORMAT(Vr_Nota, 'C', 'pt-br') AS Vr_NotaPtBR
+  FORMAT(Vr_Nota, 'C', 'pt-br') AS Vr_NotaPtBR_Moeda
+
+  -- Valor Formatado como Número (ENU)
+  FORMAT(Vr_Nota, 'N') AS Vr_NotaENU,
+
+  -- Valor Formatado como Número (PT-BR)
+  FORMAT(Vr_Nota, 'N', 'pt-br') AS Vr_NotaPtBR
 FROM Dados
