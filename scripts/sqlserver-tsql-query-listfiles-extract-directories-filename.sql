@@ -1,6 +1,20 @@
 -- Samir M. Morimoto - 2021
 -- Problem: List files and extract DirectoryPathFile and FileName
 -- Create variable to receive result from DIR command
+
+---- To allow advanced options to be changed.
+--EXEC sp_configure 'show advanced options', 1
+--GO
+---- To update the currently configured value for advanced options.
+--RECONFIGURE
+--GO
+---- To enable the feature.
+--EXEC sp_configure 'xp_cmdshell', 1
+--GO
+---- To update the currently configured value for this feature.
+--RECONFIGURE
+--GO
+
 DECLARE @cmdOutputDir TABLE ( fullPath varchar(MAX) )
 /*
 Use procedure xp_cmdshell to execute DIR command, parameters:
